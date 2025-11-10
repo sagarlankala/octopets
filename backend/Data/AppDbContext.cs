@@ -12,6 +12,7 @@ public class AppDbContext : DbContext
 
     public DbSet<Listing> Listings => Set<Listing>();
     public DbSet<Review> Reviews => Set<Review>();
+    public DbSet<PetProfile> PetProfiles => Set<PetProfile>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -274,6 +275,43 @@ public class AppDbContext : DbContext
                 Photos = new List<string> { "moochs1.jpg", "moochs2.jpg" },
                 Rating = 5.0,
                 CreatedAt = new DateTime(2025, 5, 2)
+            }
+        );
+
+        // Seed pet profiles
+        modelBuilder.Entity<PetProfile>().HasData(
+            new PetProfile
+            {
+                Id = 1,
+                Name = "Buddy",
+                PetType = "dogs",
+                Breed = "Golden Retriever",
+                Age = 3,
+                Photo = "dog1.png",
+                Description = "Friendly and energetic golden retriever who loves parks!",
+                CreatedAt = new DateTime(2025, 4, 1)
+            },
+            new PetProfile
+            {
+                Id = 2,
+                Name = "Whiskers",
+                PetType = "cats",
+                Breed = "Tabby",
+                Age = 5,
+                Photo = "cat1.jpg",
+                Description = "Independent cat who enjoys cozy cafes.",
+                CreatedAt = new DateTime(2025, 4, 5)
+            },
+            new PetProfile
+            {
+                Id = 3,
+                Name = "Charlie",
+                PetType = "birds",
+                Breed = "Parakeet",
+                Age = 2,
+                Photo = null,
+                Description = "Colorful and vocal parakeet.",
+                CreatedAt = new DateTime(2025, 4, 10)
             }
         );
     }

@@ -21,6 +21,14 @@ const Navbar: React.FC = () => {
                 Listings
               </NavLink>
             </li>
+            <li className="nav-item">
+              <NavLink 
+                to={ROUTES.PET_PROFILES} 
+                className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}
+              >
+                My Pets
+              </NavLink>
+            </li>
           </ul>
         </div>
         
