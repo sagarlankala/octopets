@@ -26,6 +26,7 @@ builder.Services.ConfigureHttpJsonOptions(options =>
 // Register repositories
 builder.Services.AddScoped<IListingRepository, ListingRepository>();
 builder.Services.AddScoped<IReviewRepository, ReviewRepository>();
+builder.Services.AddScoped<IPetProfileRepository, PetProfileRepository>();
 
 // Add native OpenAPI support
 builder.Services.AddEndpointsApiExplorer();
@@ -72,6 +73,7 @@ catch (Exception ex)
 // Map endpoints
 app.MapListingEndpoints();
 app.MapReviewEndpoints();
+app.MapPetProfileEndpoints();
 
 // Health check endpoint - make this available in all environments
 app.MapGet("/health", () => Results.Ok(new { Status = "Healthy", Timestamp = DateTime.UtcNow }))

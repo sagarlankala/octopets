@@ -6,6 +6,8 @@ import { ROUTES } from './data/constants';
 import Home from './pages/Home';
 import Listings from './pages/Listings';
 import ListingDetails from './pages/ListingDetails';
+import PetProfiles from './pages/PetProfiles';
+import PetProfileForm from './pages/PetProfileForm';
 
 // Import components
 import Navbar from './components/Navbar';
@@ -24,6 +26,8 @@ const App: React.FC = () => {
             <Route path={ROUTES.HOME} element={<Home />} />
             <Route path={ROUTES.LISTINGS} element={<Listings />} />
             <Route path={ROUTES.LISTING_DETAILS} element={<ListingDetails />} />
+            <Route path={ROUTES.PET_PROFILES} element={<PetProfiles />} />
+            <Route path={ROUTES.PET_PROFILE_FORM} element={<PetProfileForm />} />
           </Routes>
         </main>
         <Footer />

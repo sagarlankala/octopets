@@ -66,3 +66,24 @@ export type FormState = {
     website: string;
   };
 };
+
+export type PetProfile = {
+  id: number;
+  name: string;
+  petType: string;
+  breed?: string;
+  age?: number;
+  photo?: string;
+  description?: string;
+  createdAt: string;
+  updatedAt?: string;
+};
+
+export type PetProfileFormState = {
+  name: string;
+  petType: string;
+  breed: string;
+  age: string;
+  photo: string;
+  description: string;
+};
